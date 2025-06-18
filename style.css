@@ -1,0 +1,712 @@
+/* CSS Variables for easy themeing and consistency */
+:root {
+    --primary-color: #6a0dad; /* Deep Purple */
+    --secondary-color: #007bff; /* Bright Blue */
+    --accent-color: #ff6347; /* Tomato */
+    --text-color: #333;
+    --background-color: #f8f8f8;
+    --card-bg-color: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --gradient-1: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-2: linear-gradient(135deg, var(--accent-color) 0%, #ff8c00 100%); /* Darker orange */
+    --transition-speed: 0.3s;
+    --border-radius: 12px;
+    --padding-section: 80px;
+    --gap-grid: 30px;
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --primary-color: #bb86fc; /* Lighter Purple */
+    --secondary-color: #03dac6; /* Teal */
+    --accent-color: #ffab00; /* Amber */
+    --text-color: #e0e0e0;
+    --background-color: #121212;
+    --card-bg-color: #1f1f1f;
+    --border-color: #333333;
+    --shadow-light: rgba(255, 255, 255, 0.05);
+    --shadow-medium: rgba(255, 255, 255, 0.1);
+    --gradient-1: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-2: linear-gradient(135deg, var(--accent-color) 0%, #ffa000 100%); /* Slightly darker amber */
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: var(--padding-section) 0;
+    opacity: 0; /* For scroll reveal */
+    transform: translateY(20px); /* For scroll reveal */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.8em; }
+h2 { font-size: 2.8em; text-align: center; margin-bottom: 40px; }
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.btn-primary {
+    background: var(--gradient-1);
+    color: white;
+    box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+.btn-primary:hover {
+    background: var(--gradient-2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.btn-secondary {
+    background-color: var(--card-bg-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.btn-small {
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--card-bg-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    color: var(--text-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.1), rgba(0, 123, 255, 0.1)), var(--background-color);
+    padding: var(--padding-section) 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Make it take up most of the viewport height */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.hero-typing-text {
+    font-size: 1.8em;
+    font-weight: 600;
+    min-height: 2.5em; /* Prevent layout shift during typing */
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.hero-actions .btn {
+    margin: 0 15px;
+    margin-top: 20px;
+}
+
+/* AI Mascot Character */
+.ai-mascot-container {
+    width: 150px;
+    height: 150px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.ai-mascot-svg {
+    width: 100%;
+    height: 100%;
+    transform-origin: center bottom;
+    transition: transform 0.5s ease-out;
+}
+/* Simple hover animation for the mascot */
+.ai-mascot-container:hover .ai-mascot-svg {
+    transform: translateY(-10px) rotate(-5deg);
+}
+
+/* Features Section */
+.features-section {
+    background-color: var(--card-bg-color);
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap-grid);
+}
+
+.feature-card {
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.feature-icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.feature-card p {
+    color: var(--text-color);
+}
+
+/* Solutions Section */
+.solutions-section {
+    background-color: var(--background-color);
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-grid);
+}
+
+.solution-card {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.solution-icon {
+    font-size: 3.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.solution-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.solution-card p {
+    color: var(--text-color);
+    font-size: 0.95em;
+}
+
+/* About Us Section */
+.about-section {
+    background-color: var(--card-bg-color);
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-grid);
+}
+
+.about-text-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-text-content p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.about-vision-graphic {
+    flex: 1;
+    min-width: 250px;
+    height: 250px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-vision-graphic svg {
+    width: 100%;
+    height: 100%;
+    animation: pulseGraphic 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGraphic {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+body.dark-theme .about-graphic-shape {
+    fill: url(#aboutGradientDark); /* Ensure dark theme gradient is applied */
+}
+
+
+/* Pricing Section Styles */
+.pricing-section {
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap-grid);
+    align-items: stretch; /* Ensure cards have same height */
+}
+
+.pricing-card {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.pricing-card h3 {
+    margin-top: 0;
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.pricing-card .price {
+    font-size: 3.5em;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+}
+
+.pricing-card .price span {
+    font-size: 0.5em; /* For currency symbol and /month */
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+.pricing-card ul li {
+    font-size: 1.1em;
+    padding: 8px 0;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-card ul li i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.pricing-card ul li i.cross {
+    color: #dc3545; /* Red for excluded features */
+}
+
+.pricing-card .btn {
+    margin-top: auto; /* Push button to bottom */
+    width: 90%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-card.featured-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    transform: scale(1.05); /* Highlight featured card */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 10;
+}
+.pricing-card.featured-card h3,
+.pricing-card.featured-card .price,
+.pricing-card.featured-card .price span,
+body.dark-theme .pricing-card.featured-card h3,
+body.dark-theme .pricing-card.featured-card .price,
+body.dark-theme .pricing-card.featured-card .price span {
+    color: white; /* Ensure text is white on featured card */
+}
+
+.pricing-card.featured-card ul li {
+    color: rgba(255, 255, 255, 0.9);
+}
+.pricing-card.featured-card ul li i {
+    color: var(--accent-color); /* Use accent for checks on featured card */
+}
+.pricing-card.featured-card ul li i.cross {
+    color: #f0f0f0; /* Light gray for crosses on featured card */
+}
+
+.pricing-card.featured-card .btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+.pricing-card.featured-card .btn:hover {
+    background-color: #e6b100;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.05), rgba(0, 123, 255, 0.05)), var(--background-color);
+    text-align: center;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: var(--border-radius);
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-text {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 20px;
+    max-width: 800px;
+    color: var(--text-color);
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.carousel-controls {
+    margin-top: 30px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    display: inline-block;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: var(--primary-color);
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--gradient-1);
+    color: white;
+    text-align: center;
+    padding: var(--padding-section) 20px;
+}
+
+.cta-section h2 {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 25px;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.footer-links a {
+    margin: 0 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    h1 { font-size: 3.5em; }
+    h2 { font-size: 2.2em; }
+    .hero-typing-text { font-size: 1.5em; }
+    .btn { padding: 12px 25px; font-size: 1em; }
+    section { padding: 60px 0; }
+    .about-text-content { text-align: center; }
+    .about-vision-graphic { margin: 30px auto; } /* Center graphic when stacked */
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .nav-links li {
+        margin: 0;
+    }
+    h1 { font-size: 2.8em; }
+    .hero-typing-text { font-size: 1.2em; }
+    .hero-actions .btn {
+        display: block;
+        width: 80%;
+        margin: 15px auto;
+    }
+    .ai-mascot-container {
+        width: 100px;
+        height: 100px;
+    }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    .features-grid, .solutions-grid, .about-content, .pricing-grid { /* Added pricing-grid */
+        grid-template-columns: 1fr;
+    }
+    .feature-card, .solution-card, .pricing-card { /* Removed .ai-demo-box from here */
+        padding: 25px;
+    }
+    .testimonial-slide {
+        padding: 30px;
+    }
+    .testimonial-text { font-size: 1em; }
+    .cta-section h2 { font-size: 2em; }
+    .cta-section p { font-size: 1em; }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-links a {
+        margin: 0;
+    }
+    section {
+        padding: 40px 0;
+    }
+    .about-vision-graphic {
+        width: 200px;
+        height: 200px;
+    }
+    .pricing-card.featured-card { /* Adjust featured card transform on smaller screens */
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    h1 { font-size: 2.2em; }
+    .hero-typing-text { font-size: 1em; }
+    .navbar .logo { font-size: 1.5em; }
+    .btn { padding: 10px 20px; font-size: 0.9em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    .section-description {
+        font-size: 0.9em;
+        margin-bottom: 40px;
+    }
+    .pricing-card h3 { font-size: 1.8em; } /* Smaller pricing heading */
+    .pricing-card .price { font-size: 3em; } /* Smaller price text */
+    .pricing-card ul li { font-size: 0.9em; } /* Smaller list items */
+}

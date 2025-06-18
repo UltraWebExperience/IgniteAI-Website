@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite AI: Interactive Demo</title>
+    <!-- Google Fonts: Poppins for headings, Inter for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Markdown Parser Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+</head>
+<body>
+    <div class="chat-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-bars menu-icon" id="sidebar-toggle"></i>
+                <h3>Ignite AI Demo</h3>
+            </div>
+            <button id="new-chat-btn" class="btn new-chat-btn">
+                <i class="fas fa-plus"></i> <span class="btn-text">New Chat</span>
+            </button>
+            <div class="chat-history-list">
+                <!-- Chat history items will be added here by JS -->
+                <div class="history-item active">
+                    <i class="fas fa-comment"></i> <span class="history-text">Today's Demo</span>
+                </div>
+            </div>
+            <div class="back-to-home">
+                <a href="../index.html">← <span class="btn-text">Back to Ignite AI</span></a> <!-- CORRECTED LINK (now up one level) -->
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <header class="chat-main-header">
+                <div class="chat-title" id="chat-session-title">
+                    What's on the agenda today?
+                </div>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    ☀️
+                </button>
+            </header>
+
+            <div class="chat-history-display" id="chat-history-display">
+                <!-- Chat messages will appear here -->
+                <div class="chat-message ai-message initial-ai-message">
+                    <p>Hello! I'm Ignite AI, your interactive demo. What can I help you with today?</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div id="daily-limit-message" class="daily-limit-message" style="display:none;">
+                    You have reached your daily demo limit. Please try again tomorrow.
+                </div>
+                <div class="input-row">
+                    <textarea id="user-input" placeholder="Ask anything"></textarea>
+                    <button id="send-btn" class="btn send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

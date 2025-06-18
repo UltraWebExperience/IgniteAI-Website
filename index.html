@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite AI - Smart Solutions for Tomorrow</title>
+    <!-- Google Fonts: Poppins for headings, Inter for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Ignite AI</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="IgniteAI_AIDemo/index.html" target="_blank">AI Demo</a></li> <!-- LINK TO EXTERNAL DEMO SITE -->
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                ☀️
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Unlock the Future with AI</h1>
+                <p class="hero-typing-text"><span id="typing-text"></span><span class="cursor">|</span></p>
+                <div class="hero-actions">
+                    <a href="#features" class="btn btn-primary">Discover Solutions</a>
+                    <a href="IgniteAI_AIDemo/index.html" target="_blank" class="btn btn-secondary">Try a Demo</a> <!-- BUTTON LINK TO EXTERNAL DEMO SITE -->
+                </div>
+                <div class="ai-mascot-container">
+                    <!-- AI Mascot Character SVG -->
+                    <svg class="ai-mascot-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6a0dad;stop-opacity:1" /> <!-- Purple -->
+                                <stop offset="100%" style="stop-color:#007bff;stop-opacity:1" /> <!-- Blue -->
+                            </linearGradient>
+                            <linearGradient id="aiGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#bb86fc;stop-opacity:1" /> <!-- Lighter Purple -->
+                                <stop offset="100%" style="stop-color:#03dac6;stop-opacity:1" /> <!-- Teal -->
+                            </linearGradient>
+                        </defs>
+                        <!-- Main Head/Body -->
+                        <rect x="25" y="25" width="50" height="50" rx="15" fill="url(#aiGradient)" class="mascot-body"/>
+                        <!-- Eyes -->
+                        <circle cx="40" cy="45" r="5" fill="white" />
+                        <circle cx="60" cy="45" r="5" fill="white" />
+                        <!-- Mouth/Smile -->
+                        <path d="M40 60 Q 50 68 60 60" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Antenna -->
+                        <line x1="50" y1="25" x2="50" y2="15" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="50" cy="15" r="5" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card reveal-item">
+                        <span class="feature-icon">✨</span>
+                        <h3>Smart Automation</h3>
+                        <p>Streamline workflows and boost efficiency with intelligent, automated solutions tailored for your business.</p>
+                    </div>
+                    <div class="feature-card reveal-item">
+                        <span class="feature-icon">📊</span>
+                        <h3>Actionable Insights</h3>
+                        <p>Leverage powerful AI analytics to gain deep insights and make data-driven decisions confidently.</p>
+                    </div>
+                    <div class="feature-card reveal-item">
+                        <span class="feature-icon">🔒</span>
+                        <h3>Secure & Scalable</h3>
+                        <p>Build on a robust, secure infrastructure designed to scale with your growing business needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="solutions-section">
+            <div class="container">
+                <h2>AI Solutions for Your Industry</h2>
+                <p class="section-description">Ignite AI empowers businesses across various sectors with targeted, intelligent solutions.</p>
+                <div class="solutions-grid">
+                    <div class="solution-card reveal-item">
+                        <i class="fas fa-handshake solution-icon"></i>
+                        <h3>Customer Service AI</h3>
+                        <p>Automate inquiries, provide instant support, and enhance customer satisfaction with AI-powered chatbots and tools.</p>
+                    </div>
+                    <div class="solution-card reveal-item">
+                        <i class="fas fa-flask solution-icon"></i>
+                        <h3>Research & Development AI</h3>
+                        <p>Accelerate discovery and analysis, from scientific data processing to market trend prediction.</p>
+                    </div>
+                    <div class="solution-card reveal-item">
+                        <i class="fas fa-shield-alt solution-icon"></i>
+                        <h3>Security & Fraud Detection</h3>
+                        <p>Proactively identify and mitigate threats, protecting your assets with intelligent monitoring.</p>
+                    </div>
+                    <div class="solution-card reveal-item">
+                        <i class="fas fa-chart-pie solution-icon"></i>
+                        <h3>Financial Analysis AI</h3>
+                        <p>Gain predictive insights into market movements, risk assessment, and investment opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Ignite AI</h2>
+                <div class="about-content">
+                    <div class="about-text-content reveal-item">
+                        <p>Ignite AI was founded on the principle that artificial intelligence should be accessible and beneficial for businesses of all sizes. We believe in harnessing the power of AI to drive innovation, improve efficiency, and unlock new growth opportunities for our clients.</p>
+                        <p>Our team comprises leading AI researchers, data scientists, and software engineers dedicated to building intelligent solutions that are not just cutting-edge but also practical and impactful. We are committed to ethical AI development and ensuring our technologies contribute positively to your success.</p>
+                        <a href="#contact" class="btn btn-primary btn-small">Join Our Mission</a>
+                    </div>
+                    <div class="about-vision-graphic reveal-item">
+                        <!-- Simple graphic representing growth/connection/AI -->
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="aboutGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#6a0dad;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="aboutGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#03dac6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#bb86fc;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="70" width="15" height="20" fill="url(#aboutGradientLight)" class="about-graphic-shape"/>
+                            <rect x="30" y="50" width="15" height="40" fill="url(#aboutGradientLight)" class="about-graphic-shape"/>
+                            <rect x="50" y="30" width="15" height="60" fill="url(#aboutGradientLight)" class="about-graphic-shape"/>
+                            <rect x="70" y="10" width="15" height="80" fill="url(#aboutGradientLight)" class="about-graphic-shape"/>
+                            <circle cx="75" cy="15" r="8" fill="white" stroke="url(#aboutGradientLight)" stroke-width="2"/>
+                            <line x1="70" y1="20" x2="65" y2="30" stroke="white" stroke-width="2" />
+                            <line x1="75" y1="20" x2="80" y2="30" stroke="white" stroke-width="2" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2>Flexible Pricing Plans</h2>
+                <p class="section-description">Choose the plan that best fits your business needs and scale with Ignite AI.</p>
+                <div class="pricing-grid">
+                    <div class="pricing-card reveal-item">
+                        <h3>Standard</h3>
+                        <div class="price"><span>$</span>99<span>/month</span></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Core AI Automation Suite</li>
+                            <li><i class="fas fa-check-circle"></i> Basic Analytics Dashboard</li>
+                            <li><i class="fas fa-check-circle"></i> Email Support</li>
+                            <li><i class="fas fa-times-circle cross"></i> Advanced Customization</li>
+                            <li><i class="fas fa-times-circle cross"></i> Dedicated Account Manager</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured-card reveal-item">
+                        <h3>Premium</h3>
+                        <div class="price"><span>$</span>299<span>/month</span></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> All Standard Features</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced AI Models & Insights</li>
+                            <li><i class="fas fa-check-circle"></i> Priority Chat Support</li>
+                            <li><i class="fas fa-check-circle"></i> Limited Custom Integrations</li>
+                            <li><i class="fas fa-times-circle cross"></i> Enterprise-Grade Security</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Go Premium</a>
+                    </div>
+                    <div class="pricing-card reveal-item">
+                        <h3>Enterprise</h3>
+                        <div class="price"><span>Custom</span></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> All Premium Features</li>
+                            <li><i class="fas fa-check-circle"></i> Fully Tailored AI Solutions</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 Dedicated Support</li>
+                            <li><i class="fas fa-check-circle"></i> On-Premise Deployment Options</li>
+                            <li><i class="fas fa-check-circle"></i> Custom AI Model Training</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial-slide">
+                        <p class="testimonial-text">"Ignite AI transformed our data analysis process. The insights are invaluable!"</p>
+                        <p class="testimonial-author">- Jane Doe, CEO of InnovateCorp</p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p class="testimonial-text">"Seamless integration and incredible efficiency gains. Highly recommend Ignite AI!"</p>
+                        <p class="testimonial-author">- John Smith, Founder of NextGen Solutions</p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p class="testimonial-text">"Their automation tools are game-changers. Our team productivity soared!"</p>
+                        <p class="testimonial-author">- Emily White, Operations Director</p>
+                    </div>
+                </div>
+                <div class="carousel-controls" id="testimonial-dots">
+                    <span class="carousel-dot active" data-slide-index="0"></span>
+                    <span class="carousel-dot" data-slide-index="1"></span>
+                    <span class="carousel-dot" data-slide-index="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <h2>Ready to Ignite Your Business?</h2>
+                <p>Contact us today for a free consultation and see how our AI solutions can empower your future.</p>
+                <a href="mailto:ultrawebexperience@gmail.com" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ignite AI. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
